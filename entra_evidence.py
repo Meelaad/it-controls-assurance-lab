@@ -1,16 +1,23 @@
+import argparse
 import csv
+import os
 
 import graph
 
 
-def write_csv(name, rows, fields):
-    with open(f"evidence/{name}", "w", newline="") as f:
+def write_csv(path, rows, fields):
+    with open(path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields)
         w.writeheader()
         w.writerows(rows)
 
 
 def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("--out", default="evidence")
+    args = p.parse_args()
+    os.makedirs(args.out, exist_ok=True)
+
     users = graph.get_all("/users?$select=id,userPrincipalName,displayName,department,jobTitle,accountEnabled")
     by_id = {u["id"]: u for u in users}
 
@@ -43,8 +50,9 @@ def main():
             "roles": "|".join(sorted(roles_of[u["id"]])),
         })
 
-    write_csv("entra_users.csv", user_rows, list(user_rows[0]))
-    write_csv("entra_roles.csv", sorted(role_rows, key=lambda r: (r["role"], r["user"])), ["user", "role", "scope"])
+    write_csv(os.path.join(args.out, "entra_users.csv"), user_rows, list(user_rows[0]))
+    write_csv(os.path.join(args.out, "entra_roles.csv"),
+              sorted(role_rows, key=lambda r: (r["role"], r["user"])), ["user", "role", "scope"])
     print(f"{len(user_rows)} users, {len(role_rows)} role assignments")
 
 
