@@ -24,6 +24,9 @@ def call(method, path, body=None):
     if out.returncode != 0:
         if "Not Found" in out.stderr or "Request_ResourceNotFound" in out.stderr:
             return None
+        # signInActivity and the MFA report need P1/P2
+        if "NonPremiumTenant" in out.stderr:
+            return None
         raise SystemExit(f"az rest {method} {path} failed: {out.stderr.strip()[:300]}")
     return json.loads(out.stdout) if out.stdout.strip() else {}
 
