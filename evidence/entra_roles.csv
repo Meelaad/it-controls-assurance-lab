@@ -1,0 +1,4 @@
+user,role,scope
+labadmin,Global Administrator,/
+tempadmin,Global Administrator,/
+jwalsh,User Administrator,/

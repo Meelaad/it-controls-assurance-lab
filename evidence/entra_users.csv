@@ -1,0 +1,9 @@
+user,name,department,job_title,enabled,groups,roles
+akhan,Aisha Khan,Finance,AP Clerk,yes,AP-Clerks,
+dmoreau,Daniel Moreau,Finance,AP Manager,yes,AP-Managers,
+eclarke,Emma Clarke,Finance,Financial Analyst,no,Finance-Analysts,
+jwalsh,Jordan Walsh,IT,IT Support Analyst,yes,IT-Support,User Administrator
+labadmin,Lab Admin,,,yes,,Global Administrator
+pshah,Priya Shah,Finance,Financial Analyst,yes,Finance-Analysts,
+rpatel,Ryan Patel,Finance,AP Clerk,yes,AP-Clerks,
+tempadmin,Temp Admin,IT,,yes,,Global Administrator
