@@ -78,6 +78,20 @@ $ python entra_evidence.py --out evidence/retest
 
 What was fixed is in retest.csv. F-01 and F-02 are closed: rpatel and tempadmin are disabled, jwalsh has no standing role and gets Helpdesk Administrator as an eligible role in PIM (4 hours max, MFA, a reason and a ticket to activate), and three Conditional Access policies require MFA and block legacy sign-in. F-03 is fixed with a quarterly Entra access review where the reviewer is the Access Governance Lead, not the person's own manager. Its first run denied both leavers. F-04 and F-06 are partly fixed. Turning on Dependabot also added GitHub's Dependency Graph workflow to cve-triage, the only repo with a requirements.txt, which is why its workflow count went from 1 to 2.
 
+tempadmin before the fix, a Global Administrator with no MFA method:
+
+![tempadmin with no authentication methods](screenshots/tempadmin-no-mfa.jpg)
+
+The Conditional Access policies after the fix, and the first access review on AP-Clerks:
+
+![conditional access policies](screenshots/conditional-access.jpg)
+![access review decisions](screenshots/access-review.png)
+
+The control tests and issues in ServiceNow:
+
+![control tests in servicenow](screenshots/servicenow-control-tests.jpg)
+![issues in servicenow](screenshots/servicenow-issues.jpg)
+
 ## Design notes
 The tenant started on Entra ID Free, which is what the testing ran on. PIM, Conditional Access and Access Reviews need P1/P2, so I turned on the Entra ID P2 trial for the fixes. That's why the before evidence has no MFA or sign-in columns and the retest evidence does.
 
