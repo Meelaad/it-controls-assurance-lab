@@ -1,0 +1,8 @@
+finding,retested_on,what_was_done,retest_result,status
+F-01,2026-11-17,Disabled rpatel with remediate_tenant.py.,rpatel shows enabled = no in evidence/retest/entra_users.csv. Both leavers (eclarke and rpatel) are now disabled.,Closed
+F-02,2026-11-17,Disabled tempadmin and removed its Global Administrator role. Moved jwalsh from User Administrator to Helpdesk Administrator.,Only labadmin (MFA registered) and jwalsh (Helpdesk Administrator) hold roles now (evidence/retest/entra_roles.csv). jwalsh has no MFA method yet because the account hasn't signed in.,Open until jwalsh registers MFA
+F-03,,New review steps agreed: managers and admins are reviewed by someone else and leavers are marked from the HR list first.,To be tested on the next review.,Open
+F-04,,,VULN-3 and VULN-4 still open. Owner to fix or accept by 2026-11-24.,Open
+F-05,,,Branch protection not turned on yet.,Open
+F-06,,,Not started. Due 2026-12-31.,Open
+F-07,,,Not started. Due 2026-12-31.,Open
