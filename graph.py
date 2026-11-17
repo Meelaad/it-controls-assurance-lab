@@ -7,11 +7,23 @@ import tempfile
 GRAPH = "https://graph.microsoft.com/v1.0"
 
 
+def az_cmd():
+    az = shutil.which("az")
+    if not az:
+        raise SystemExit("az cli not found, install it and run az login first")
+    # az.cmd runs through cmd.exe, which splits URLs on & and eats the quotes in JSON.
+    # The MSI install ships its own python so call that instead
+    if az.lower().endswith(".cmd"):
+        py = os.path.join(os.path.dirname(os.path.dirname(az)), "python.exe")
+        if os.path.exists(py):
+            return [py, "-IBm", "azure.cli"]
+    return [az]
+
+
 def call(method, path, body=None):
-    cmd = [shutil.which("az") or "az", "rest", "--method", method, "--url", GRAPH + path]
+    cmd = az_cmd() + ["rest", "--method", method, "--url", GRAPH + path]
     body_file = None
     if body is not None:
-        # cmd.exe mangles the quotes in JSON args, so the body goes in a temp file
         with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
             json.dump(body, f)
             body_file = f.name
