@@ -1,0 +1,5 @@
+repo,visibility,branch_protection,secret_scanning,push_protection,dependabot_updates,workflows
+cve-triage,public,no,enabled,enabled,disabled,1
+access-governance-lab,public,no,enabled,enabled,disabled,0
+splunk-detections,public,no,enabled,enabled,disabled,0
+traffic-analysis,public,no,enabled,enabled,disabled,0

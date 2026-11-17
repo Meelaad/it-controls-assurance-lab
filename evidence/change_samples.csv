@@ -1,0 +1,41 @@
+repo,sha,date,message,via_pr,approvals
+cve-triage,8bca28a,2026-10-28,check the saved json before reading it,no,0
+cve-triage,69ed092,2026-10-25,add vulnerability status deck,no,0
+cve-triage,2e9b31a,2026-10-22,add remediation report for lab scan,no,0
+cve-triage,20857a8,2026-10-22,get EPSS in batches of 100,no,0
+cve-triage,16e8029,2026-10-21,add main() and usage message,no,0
+cve-triage,ff4f665,2026-10-28,add a trimmed sample scan,no,0
+cve-triage,8cc9dc0,2026-10-28,test that scan_cves dedupes and sorts,no,0
+cve-triage,9ac988e,2026-10-22,add brief for CVE-2026-0322,no,0
+cve-triage,07d2fb6,2026-10-21,add usage and priority rules to README,no,0
+cve-triage,3a3cded,2026-10-22,ignore nessus exports,no,0
+access-governance-lab,fdc0fed,2026-10-25,write up the lab setup and how the analyzer works,no,0
+access-governance-lab,5135294,2026-10-25,"flag admins, leavers and access outside the role policy",no,0
+access-governance-lab,1e07a63,2026-10-25,add script that creates the test users,no,0
+access-governance-lab,6d9e94b,2026-10-25,"add vendor, invoice and payment objects",no,0
+access-governance-lab,513b513,2026-10-25,give the admin profile access to the new fields,no,0
+access-governance-lab,c6ee102,2026-10-25,first commit,no,0
+access-governance-lab,d02b08f,2026-10-25,add remediation plan and a script to apply it,no,0
+access-governance-lab,92cfa44,2026-10-25,talk to the org through the salesforce cli,no,0
+access-governance-lab,60ef700,2026-10-25,work out each user's effective permissions,no,0
+access-governance-lab,ec9f650,2026-10-25,add SoD rules and the role access policy,no,0
+splunk-detections,1404a14,2026-10-23,write up the searches in the README,no,0
+splunk-detections,89976a6,2026-10-22,add search for web scanning in apache logs,no,0
+splunk-detections,f6b1d5d,2026-10-22,add search for ssh brute force,no,0
+splunk-detections,ce7237d,2026-10-22,first commit,no,0
+splunk-detections,3ccfbbb,2026-10-22,add search for a login right after many failures,no,0
+splunk-detections,d731f6e,2026-10-23,add dashboard for the lab vm,no,0
+splunk-detections,85fdd5e,2026-10-22,add splunk config and docker command,no,0
+splunk-detections,aa60a62,2026-10-23,add dashboard screenshot,no,0
+splunk-detections,3afa98c,2026-10-23,add a small sample of the lab logs,no,0
+splunk-detections,89fd8ce,2026-10-22,add search for logins outside business hours,no,0
+traffic-analysis,bb926c4,2026-10-28,add att&ck mapping and next steps,no,0
+traffic-analysis,31a2ac3,2026-10-23,add att&ck mapping and next steps,no,0
+traffic-analysis,3b2892d,2026-10-23,first commit,no,0
+traffic-analysis,78e783b,2026-10-23,add timeline,no,0
+traffic-analysis,0382f9e,2026-10-28,add kongtuke write-up with the answers,no,0
+traffic-analysis,859a584,2026-10-23,add natureforce write-up with the answers,no,0
+traffic-analysis,9b1f6a6,2026-10-28,add timeline,no,0
+traffic-analysis,e156e86,2026-10-28,add indicators,no,0
+traffic-analysis,f3af89c,2026-10-23,add indicators,no,0
+traffic-analysis,ab64276,2026-10-28,add kongtuke to the readme,no,0
