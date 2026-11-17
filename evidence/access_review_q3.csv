@@ -1,0 +1,10 @@
+user,access,reviewer,decision,reviewed_on,comment
+akhan,AP-Clerks,dmoreau,keep,2026-10-21,
+rpatel,AP-Clerks,dmoreau,keep,2026-10-21,
+dmoreau,AP-Managers,dmoreau,keep,2026-10-21,
+pshah,Finance-Analysts,dmoreau,keep,2026-10-21,
+eclarke,Finance-Analysts,dmoreau,remove,2026-10-21,left in august and already disabled
+jwalsh,IT-Support,labadmin,keep,2026-10-20,
+jwalsh,User Administrator,labadmin,keep,2026-10-20,needs it for password resets
+tempadmin,Global Administrator,labadmin,keep,2026-10-20,setup account
+labadmin,Global Administrator,labadmin,keep,2026-10-20,
