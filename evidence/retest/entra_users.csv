@@ -1,9 +1,9 @@
-user,name,department,job_title,enabled,groups,roles
-akhan,Aisha Khan,Finance,AP Clerk,yes,AP-Clerks,
-dmoreau,Daniel Moreau,Finance,AP Manager,yes,AP-Managers,
-eclarke,Emma Clarke,Finance,Financial Analyst,no,Finance-Analysts,
-jwalsh,Jordan Walsh,IT,IT Support Analyst,yes,IT-Support,Helpdesk Administrator
-labadmin,Lab Admin,,,yes,,Global Administrator
-pshah,Priya Shah,Finance,Financial Analyst,yes,Finance-Analysts,
-rpatel,Ryan Patel,Finance,AP Clerk,no,AP-Clerks,
-tempadmin,Temp Admin,IT,,no,,
+user,name,department,job_title,enabled,mfa_registered,last_sign_in,groups,roles
+akhan,Aisha Khan,Finance,AP Clerk,yes,n/a,never,AP-Clerks,
+dmoreau,Daniel Moreau,Finance,AP Manager,yes,n/a,never,AP-Managers,
+eclarke,Emma Clarke,Finance,Financial Analyst,no,n/a,never,Finance-Analysts,
+jwalsh,Jordan Walsh,IT,IT Support Analyst,yes,n/a,never,IT-Support,
+labadmin,Lab Admin,,,yes,n/a,never,,Global Administrator
+pshah,Priya Shah,Finance,Financial Analyst,yes,n/a,never,Finance-Analysts,
+rpatel,Ryan Patel,Finance,AP Clerk,no,n/a,never,AP-Clerks,
+tempadmin,Temp Admin,IT,,no,n/a,never,,

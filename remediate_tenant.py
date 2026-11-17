@@ -47,17 +47,15 @@ def main():
         if args.apply:
             graph.call("delete", f"/roleManagement/directory/roleAssignments/{a['id']}")
 
-    # F-02: jwalsh only needs password resets, Helpdesk Admin covers that
+    # F-02: jwalsh gets Helpdesk Admin as eligible in PIM instead, so no standing roles.
+    # PIM was set up in the portal, the CLI token can't write it
     jwalsh = user("jwalsh")
-    for a in assignments(jwalsh["id"], USER_ADMIN):
-        print("remove User Administrator from jwalsh")
-        if args.apply:
-            graph.call("delete", f"/roleManagement/directory/roleAssignments/{a['id']}")
-    if not assignments(jwalsh["id"], HELPDESK_ADMIN):
-        print("give jwalsh Helpdesk Administrator")
-        if args.apply:
-            graph.post("/roleManagement/directory/roleAssignments",
-                       {"principalId": jwalsh["id"], "roleDefinitionId": HELPDESK_ADMIN, "directoryScopeId": "/"})
+    for role, name in ((USER_ADMIN, "User Administrator"), (HELPDESK_ADMIN, "Helpdesk Administrator")):
+        for a in assignments(jwalsh["id"], role):
+            print(f"remove standing {name} from jwalsh")
+            if args.apply:
+                graph.call("delete", f"/roleManagement/directory/roleAssignments/{a['id']}")
+
 
 if __name__ == "__main__":
     main()
