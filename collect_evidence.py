@@ -1,5 +1,7 @@
+import argparse
 import csv
 import json
+import os
 import random
 import subprocess
 import sys
@@ -68,19 +70,28 @@ def change_sample(repo):
     return len(commits), rows
 
 
-def write_csv(name, rows):
-    with open(f"evidence/{name}", "w", newline="") as f:
+def write_csv(path, rows):
+    with open(path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader()
         w.writerows(rows)
 
 
 if __name__ == "__main__":
+    p = argparse.ArgumentParser()
+    p.add_argument("--out", default="evidence")
+    p.add_argument("--settings-only", action="store_true", help="skip the commit sample, for the retest")
+    args = p.parse_args()
+    os.makedirs(args.out, exist_ok=True)
+
     settings, samples = [], []
     for repo in REPOS:
         settings.append(repo_settings(repo))
-        total, rows = change_sample(repo)
-        samples += rows
-        print(f"{repo}: {total} commits on the default branch, sampled {len(rows)}")
-    write_csv("repo_settings.csv", settings)
-    write_csv("change_samples.csv", samples)
+        if not args.settings_only:
+            total, rows = change_sample(repo)
+            samples += rows
+            print(f"{repo}: {total} commits on the default branch, sampled {len(rows)}")
+    write_csv(os.path.join(args.out, "repo_settings.csv"), settings)
+    if samples:
+        write_csv(os.path.join(args.out, "change_samples.csv"), samples)
+    print("wrote", args.out)
